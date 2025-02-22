@@ -54,10 +54,10 @@ export default function Home() {
       <footer className="mt-8 text-gray-600 text-sm">
         Made with ❤️ |{" "}
         <a
-          href="https://buymeacoffee.com/zantex"
+          href="https://paypal.me/zantexdigital"
           className="text-blue-600 hover:underline"
         >
-          Support this tool
+          Support via PayPal
         </a>
       </footer>
     </div>

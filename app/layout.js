@@ -70,12 +70,12 @@ export default function RootLayout({ children }) {
             <p className="text-sm">
               Made with ❤️ | Support this tool:
               <a
-                href="https://buymeacoffee.com/zantex"
+                href="https://paypal.me/zantexdigital"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-300 hover:underline ml-1"
               >
-                Buy Me a Coffee
+                Support via PayPal
               </a>
             </p>
           </div>

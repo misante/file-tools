@@ -47,6 +47,9 @@ export default function HeaderProvider() {
           <a href="/compress" className="hover:underline">
             Compress
           </a>
+          <a href="/about" className="hover:underline">
+            About
+          </a>
           {/* Add more links if you have additional features */}
         </nav>
       </div>

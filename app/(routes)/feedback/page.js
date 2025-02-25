@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 import toast from "react-hot-toast";
 
 export default function Feedback() {
@@ -12,6 +13,7 @@ export default function Feedback() {
     rating: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter(); // Initialize router for navigation
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,13 +43,7 @@ export default function Feedback() {
       }
 
       toast.success("Thank you for your feedback!");
-      setFormData({
-        name: "",
-        email: "",
-        feedback: "",
-        satisfaction: "",
-        rating: "",
-      }); // Reset form
+      router.push("/feedbackConfirmation"); // Redirect to confirmation page after success
     } catch (err) {
       toast.error("Failed to submit feedback. Please try again.");
       console.error(err);

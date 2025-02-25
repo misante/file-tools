@@ -101,7 +101,7 @@ export default function Home() {
             File Format Converter
           </h2>
           <p className="text-gray-500 mt-2">
-            Convert PNG, JPEG, and GIF to PDF easily.
+            Convert PNG and JPEG to PDF easily.
           </p>
         </a>
         {/* Card 2: Remove Background */}
@@ -126,7 +126,6 @@ export default function Home() {
             Easily compress your files to an affordable size.
           </p>
         </a>
-        {/* Card 4: text-to-pdf */}
         <a
           href="/text-to-pdf"
           className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import imageCompression from "browser-image-compression";
+import toast from "react-hot-toast";
 
 export default function Compress() {
   const [file, setFile] = useState(null);

@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 
 const FeedbackConfirmation = () => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <section className="min-h-[100vh] w-full flex justify-center items-center">
+    <section className="min-h-[100vh] w-full flex justify-center mt-32">
       <Card className="w-[350px] shadow-xl shadow-green-500">
         <div className="p-6">
           <div className="w-full flex justify-center">
@@ -34,7 +34,7 @@ const FeedbackConfirmation = () => {
           >
             {isLoading ? (
               <div className="flex justify-around items-center">
-                <p className="text-sm"> Updating records... </p>
+                <p className="text-sm"> Redirection to Home... </p>
                 <Loader2 className="animate-spin" />
               </div>
             ) : (

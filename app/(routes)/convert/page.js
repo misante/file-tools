@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import toast from "react-hot-toast";
-import gifFrames from "gif-frames";
 
 export default function Convert() {
   const [file, setFile] = useState(null);
@@ -23,51 +22,24 @@ export default function Convert() {
     if (!file) return;
     setLoading(true);
     try {
-      if (fileType === "png" || fileType === "jpeg") {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdfDoc = await PDFDocument.create();
-        let image;
-        if (fileType === "png") {
-          image = await pdfDoc.embedPng(arrayBuffer);
-        } else {
-          // jpeg
-          image = await pdfDoc.embedJpg(arrayBuffer); // Use embedJpg for JPEGs
-        }
-        const page = pdfDoc.addPage([image.width, image.height]);
-        page.drawImage(image, { x: 0, y: 0 });
-        const pdfBytes = await pdfDoc.save();
-        const blob = new Blob([pdfBytes], { type: "application/pdf" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "converted.pdf";
-        link.click();
-        toast.success(
-          `${fileType.toUpperCase()} converted to PDF successfully!`
-        );
-      } else if (fileType === "gif") {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdfDoc = await PDFDocument.create();
-        const frames = await gifFrames({
-          url: URL.createObjectURL(file),
-          frames: "all",
-          outputType: "canvas",
-        });
-        for (const frame of frames) {
-          const canvas = frame.getImage();
-          const ctx = canvas.getContext("2d");
-          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const pngData = await pdfDoc.embedPng(imageData.data.buffer);
-          const page = pdfDoc.addPage([canvas.width, canvas.height]);
-          page.drawImage(pngData, { x: 0, y: 0 });
-        }
-        const pdfBytes = await pdfDoc.save();
-        const blob = new Blob([pdfBytes], { type: "application/pdf" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "converted.pdf";
-        link.click();
-        toast.success("GIF converted to PDF successfully!");
+      const arrayBuffer = await file.arrayBuffer();
+      const pdfDoc = await PDFDocument.create();
+      let image;
+      if (fileType === "png") {
+        image = await pdfDoc.embedPng(arrayBuffer);
+      } else {
+        // jpeg
+        image = await pdfDoc.embedJpg(arrayBuffer); // Use embedJpg for JPEGs
       }
+      const page = pdfDoc.addPage([image.width, image.height]);
+      page.drawImage(image, { x: 0, y: 0 });
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "converted.pdf";
+      link.click();
+      toast.success(`${fileType.toUpperCase()} converted to PDF successfully!`);
     } catch (err) {
       toast.error(
         `Failed to convert ${fileType.toUpperCase()} to PDF. ${err.message}`
@@ -99,20 +71,11 @@ export default function Convert() {
           >
             <option value="png">PNG</option>
             <option value="jpeg">JPEG</option>
-            <option value="gif">GIF</option>
           </select>
         </div>
         <input
           type="file"
-          accept={
-            fileType === "png"
-              ? "image/png"
-              : fileType === "jpeg"
-              ? "image/jpeg"
-              : fileType === "gif"
-              ? "image/gif"
-              : "*/*"
-          }
+          accept={fileType === "png" ? "image/png" : "image/jpeg"}
           onChange={handleFileChange}
           className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
         />

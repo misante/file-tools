@@ -27,16 +27,21 @@ export default function About() {
               className="object-cover rounded-full shadow-lg "
             />
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:w-3/4">
             <h2 className="text-3xl font-bold text-gray-800">
               Hi, I’m Anteneh
             </h2>
             <p className="mt-4 text-gray-600">
-              I’m a passionate creator who loves coding and designing digital
-              products—everything from book covers to apps. My goal is to make
-              tools and designs that inspire others to bring their ideas to
-              life. When I’m not coding and crafting, you’ll find me reading
-              sci-fi or sketching.
+              I’m a passionate coder and creator who loves building and creating
+              digital products—everything from book covers to apps. My goal is
+              to make tools and designs that inspire others to bring their ideas
+              to life and make life easier. I recently built this File Tools, a
+              free web app that helps you convert different file formats to PDFs
+              and vice versa, remove image backgrounds, compress files, and
+              more—all with no cost and no fuss. It’s my way of giving back to
+              the community and solving everyday problems with tech. When I’m
+              not coding and crafting, you’ll find me reading sci-fi or
+              sketching.
             </p>
             <Link
               href="/products"

@@ -153,6 +153,32 @@ export default function Home() {
           <span className="text-green-500 text-lg">📝</span>
         </Link>
       </div>
+      <div className="max-w-4xl mx-auto text-center">
+        <p className="text-sm">
+          Made with ❤️ | Support this tool:
+          <a
+            href="https://www.paypal.com/paypalme/zantexdigital" // Update with your PayPal link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline ml-1"
+          >
+            Support via PayPal
+          </a>
+        </p>
+      </div>
+      <div className="max-w-4xl mx-auto text-center">
+        <p className="text-sm">
+          For User Guide my Gumroad page:
+          <a
+            href="https://antekwe.gumroad.com/l/dmldhu" // Update with your PayPal link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:underline ml-1"
+          >
+            Gumroad
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

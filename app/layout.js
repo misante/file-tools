@@ -130,7 +130,7 @@ export default function RootLayout({ children }) {
             <p className="text-sm">
               Made with ❤️ | Support this tool:
               <a
-                href="https://paypal.me/yourusername" // Update with your PayPal link
+                href="https://www.paypal.com/paypalme/zantexdigital" // Update with your PayPal link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-300 hover:underline ml-1"

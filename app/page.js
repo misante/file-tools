@@ -168,7 +168,7 @@ export default function Home() {
       </div>
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-sm">
-          For User Guide my Gumroad page:
+          For User Guide visit my Gumroad page:
           <a
             href="https://antekwe.gumroad.com/l/dmldhu" // Update with your PayPal link
             target="_blank"

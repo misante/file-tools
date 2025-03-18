@@ -44,7 +44,7 @@ export default function About() {
               sketching.
             </p>
             <Link
-              href="/products"
+              href="htps://zantexdigital.com"
               className="mt-6 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700"
             >
               Check Out My Work
